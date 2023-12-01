@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+
+</head>
+
+<body>
+    <h1 class="app">YAPILACAKLAR</h1>
+    <hr>
+    <div id="saveForm">
+        <h4>Listeye Ekle</h4>
+        <form onsubmit="save(event)">
+            <div class="mainContainer">
+                <div class="input-container" >
+                    <div class="container">
+                        Planında ne var?
+                        <input type="text" id="work" autocomplete="off">
+                    </div>
+                    <div class="container" id="isDoneContainer" onclick="toggleCheckbox()">
+                        Yapıldı mı?
+                        <input type="checkbox" id="isDone">
+                    </div>
+                    <div class="container">
+                        <button type="submit">Kaydet</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="updateForm" style="display: none;">
+        <h4>Güncelle</h4>
+        <form onsubmit="update(event)">
+            <div class="mainContainer">
+                <div class="update-container">
+                    <div class="container">
+                        Planımı değiştir:
+                        <input type="text" id="updateWork" autocomplete="off">
+                    </div>
+                    <div class="container">
+                        Durum
+                        <input type="checkbox" id="updateIsDone">
+                    </div>
+                    <div class="container">
+                        <button type="submit">Güncelle</button>
+                        <button type="button" onclick="cancel()">Vazgeç</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Aksiyon</th>
+            <th>Durum</th>
+            <th>Operations</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Güncelleme Tarihi</th>
+        </thead>
+
+        <tbody>
+            <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+        </tbody>
+    </table>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
